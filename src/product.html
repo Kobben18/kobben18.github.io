@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Collective - Product Order</title>
+</head>
+<body>
+
+<section id="header">
+  <a href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+
+  <div>
+    <ul id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="order-section section-p1">
+  <div class="order">
+    <h2>Order form</h2>
+    <p id="selectedProduct">Product: loading...</p>
+
+    <form id="orderForm" class="order-form" novalidate>
+      <label>
+        Full name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Phone
+        <input type="tel" name="phone" required>
+      </label>
+
+      <label>
+        Address
+        <input type="text" name="address" required>
+      </label>
+
+      <label>
+        City
+        <input type="text" name="city" required>
+      </label>
+
+      <label>
+        Postal code
+        <input type="text" name="postalCode" required>
+      </label>
+
+      <button type="submit">Place order</button>
+    </form>
+    <p id="orderMessage" class="order-message"></p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
