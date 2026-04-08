@@ -37,10 +37,11 @@ if (productsContainer) {
 
 //form
 if (orderForm) {
+
+  //product text by ID
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
 
-  //product text
   if (productId) {
     fetch(`https://dummyjson.com/products/${productId}`)
       .then(res => res.json())
@@ -54,6 +55,7 @@ if (orderForm) {
     selectedProductText.textContent = "Product: none";
   }
 
+  //validation
   const fieldConfigs = {
     name: {
       validate(value) {
@@ -121,6 +123,7 @@ if (orderForm) {
     return orderForm.elements[fieldName];
   }
 
+  //add an error element if it doesn't exist yet, do nothing if one is already being displayed
   function ensureErrorElement(fieldName) {
     let errorEl = orderForm.querySelector(`[data-error-for="${fieldName}"]`);
 
@@ -142,11 +145,13 @@ if (orderForm) {
     return errorEl;
   }
 
+  //adds text into error element
   function setFieldState(fieldName, message) {
     const errorEl = ensureErrorElement(fieldName);
     errorEl.textContent = message;
   }
 
+  //function to validate a field
   function validateField(fieldName) {
     const input = getFieldElement(fieldName);
     const message = fieldConfigs[fieldName].validate(input.value);
@@ -154,6 +159,7 @@ if (orderForm) {
     return !message;
   }
 
+  //loops through all fields and validates
   function validateForm() {
     let isValid = true;
 
@@ -167,13 +173,16 @@ if (orderForm) {
     return isValid;
   }
 
+  //runs when submit is pressed
   orderForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    //stops if errors are still present
     if (!validateForm()) {
       return;
     }
 
+    //removing stuff to show order is confirmed
     const heading = document.querySelector(".order h2");
     if (heading) heading.remove();
 
