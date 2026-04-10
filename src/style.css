@@ -222,3 +222,67 @@ body{
     color: #465b52;
     margin: 0 0 18px 0;
 }
+
+@media (max-width: 768px) {
+    #header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    #navbar {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px 0;
+    }
+
+    #navbar li {
+        padding: 0 10px;
+    }
+
+    #navbar li a {
+        font-size: 18px;
+    }
+
+    .section-p1 {
+        padding: 30px 20px;
+    }
+
+    #products {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .about {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+
+    .about h2 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    #navbar {
+        justify-content: center;
+    }
+
+    #navbar li {
+        padding: 0 8px;
+    }
+
+    #navbar li a {
+        font-size: 16px;
+    }
+
+    .logo {
+        width: 130px;
+    }
+}
