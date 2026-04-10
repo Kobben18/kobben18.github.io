@@ -224,30 +224,33 @@ body{
 }
 
 @media (max-width: 768px) {
-    #header {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-    }
+  #header {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
 
-    .logo {
-        width: 150px;
-    }
+  #navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
 
-    #navbar {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 10px 0;
-    }
+  #navbar li {
+    flex: 0 0 auto;
+    padding: 0 6px;
+  }
 
-    #navbar li {
-        padding: 0 10px;
-    }
-
-    #navbar li a {
-        font-size: 18px;
-    }
+  #navbar li a {
+    font-size: 16px;
+    white-space: nowrap;
+  }
 
     .section-p1 {
         padding: 30px 20px;
